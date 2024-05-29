@@ -69,5 +69,9 @@ This system based on automatically recognize license plates from videos. It capt
 
 **Result:**
 
-"P:\out.mp4"
+
+
+
+https://github.com/bittu5555/Automatic-Number-Plate-Recognition/assets/106305917/74756314-ace2-47da-a880-fc1f9671bb6a
+
 
