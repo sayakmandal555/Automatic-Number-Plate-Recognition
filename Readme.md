@@ -27,42 +27,47 @@ This system based on automatically recognize license plates from videos. It capt
 
 * **Real-time Processing (real_time() function):**
   
-•	Initializes a reader for EasyOCR.
+	* Initializes a reader for EasyOCR.
 
-•	Loads two YOLO models: 
+	* Loads two YOLO models: 
 	* coco_model: for object detection (detecting vehicles).
 	* model: specifically trained to detect license plates.
-•	Defines a list vehicles containing class IDs for vehicles of interest (e.g., cars, motorcycles).
+	* Defines a list vehicles containing class IDs for vehicles of interest (e.g., cars, motorcycles).
 
-•	Opens a video capture object (cap) to read the video file specified in the path.
+	* Opens a video capture object (cap) to read the video file specified in the path.
 
 * **Loop through Video Frames:**
   
-•	Reads a frame (frame) from the video capture.
+	* Reads a frame (frame) from the video capture.
 
-•	Converts the frame from BGR (OpenCV color format) to RGB (EasyOCR format).
+	* Converts the frame from BGR (OpenCV color format) to RGB (EasyOCR format).
 
-•	Uses coco_model to detect objects in the frame.
+	* Uses coco_model to detect objects in the frame.
 
-•	Iterates through detected objects (detections): 
+	* Iterates through detected objects (detections): 
 
-*	Extracts information like bounding box coordinates (x1, y1, x2, y2), confidence score (score), and class ID (class_id).
-*	If the confidence score is greater than or equal to 0.5 (indicating a likely detection): 
-	Draws a rectangle around the detected object (assumed license plate) on the frame.
-	Crops the frame based on the bounding box coordinates to isolate the license plate region.
-	Calls perform_ocr to extract text from the cropped image.
-	Iterates through recognized text (dat): 
-	Filters out detections with special characters or blank spaces using regular expressions.
-	Checks the length of the recognized text to match the expected license plate format (8 to 10 characters for India).
-	If the length matches a valid format: 
-	Calls license_complies_format to verify the text adheres to the specific format (e.g., two alphabets followed by four numbers).
-	If the format is valid, calls format_license to remap any potential misreadings.
-	Displays the formatted license plate text and bounding box on the frame.
-	Writes the frame number, timestamp, and formatted license plate text to the CSV file using write_csv.
-5. Display and Save Results:
-•	Displays the processed frame with detections and license plate information using OpenCV.
-•	Waits for a 'q' key press to quit the loop.
-6. Post-processing (after exiting the loop):
-•	Reads the CSV file containing recognized license plates.
-•	Uses Pandas to remove duplicate entries (based on license plate text) and saves the cleaned data to a new CSV file.
+	* Extracts information like bounding box coordinates (x1, y1, x2, y2), confidence score (score), and class ID (class_id).
+	* If the confidence score is greater than or equal to 0.5 (indicating a likely detection): 
+		* Draws a rectangle around the detected object (assumed license plate) on the frame.
+		* Crops the frame based on the bounding box coordinates to isolate the license plate region.
+		* Calls perform_ocr to extract text from the cropped image.
+		* Iterates through recognized text (dat): 
+		* Filters out detections with special characters or blank spaces using regular expressions.
+		* Checks the length of the recognized text to match the expected license plate format (8 to 10 characters for India).
+		* If the length matches a valid format: 
+			* Calls license_complies_format to verify the text adheres to the specific format (e.g., two alphabets followed by four numbers).
+			* If the format is valid, calls format_license to remap any potential misreadings.
+			* Displays the formatted license plate text and bounding box on the frame.
+			* Writes the frame number, timestamp, and formatted license plate text to the CSV file using write_csv.
+* **Display and Save Results:**
+	* Displays the processed frame with detections and license plate information using OpenCV.
+	* Waits for a 'q' key press to quit the loop.
+ * 
+* **Post-processing (after exiting the loop):**
+	* Reads the CSV file containing recognized license plates.
+	* Uses Pandas to remove duplicate entries (based on license plate text) and saves the cleaned data to a new CSV file.
+
+**Result:**
+
+"P:\out.mp4"
 
