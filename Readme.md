@@ -71,7 +71,6 @@ This system based on automatically recognize license plates from videos. It capt
 
 
 
+https://github.com/bittu5555/Automatic-Number-Plate-Recognition/assets/106305917/72b1bae5-3326-45fb-bea3-0064ace63f9d
 
-https://github.com/bittu5555/Automatic-Number-Plate-Recognition/assets/106305917/74756314-ace2-47da-a880-fc1f9671bb6a
-
-
+[test.csv](https://github.com/bittu5555/Automatic-Number-Plate-Recognition/files/15480180/test.csv
