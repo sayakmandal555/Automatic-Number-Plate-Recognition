@@ -70,7 +70,6 @@ This system based on automatically recognize license plates from videos. It capt
 **Result:**
 
 
-
-https://github.com/bittu5555/Automatic-Number-Plate-Recognition/assets/106305917/72b1bae5-3326-45fb-bea3-0064ace63f9d
+I:\Indian_plate\output.mp4
 
 [test.csv](https://github.com/bittu5555/Automatic-Number-Plate-Recognition/files/15480180/test.csv
