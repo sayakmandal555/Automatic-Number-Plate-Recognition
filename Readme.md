@@ -69,6 +69,5 @@ This system based on automatically recognize license plates from videos. It capt
 
 **Result:**
 
-I:\Indian_plate\result.csv
 
 [test.csv](https://github.com/bittu5555/Automatic-Number-Plate-Recognition/files/15480180/test.csv
